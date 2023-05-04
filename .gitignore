@@ -1,0 +1,5 @@
+/venv_py_new/
+__pycache__
+.env
+env
+test_db.db
