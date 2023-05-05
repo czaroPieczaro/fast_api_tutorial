@@ -1,12 +1,13 @@
 import time
+
 import requests
 
+
 def main():
-    request_count = 10
-    url = 'https://httpbin.org/get'
-    session = requests.Session()
+    request_count = 1
+    url = "https://httpbin.org/get"
     for i in range(request_count):
-        print(f'Makin request {i+1}')
+        print(f"Makin request {i+1}")
         resp = requests.get(url)
         if resp.status_code == 200:
             pass
@@ -15,4 +16,4 @@ def main():
 start = time.time()
 main()
 end = time.time()
-print(f'It took {end - start} secs')
+print(f"It took {end - start} secs")

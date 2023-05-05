@@ -33,7 +33,7 @@ Features:
  - ✔️ Password Hashing
  - ✔️ Unit Testing (What makes an app stable)
  - ✔️ Authentication login/create user/get token
- - ✔️ Authorization/Permissions 
+ - ✔️ Authorization/Permissions
  - ✔️ Webapp (Monolithic)
  - 🚧 Load Testing using Locust
  - 🚧 Fully Asyc
@@ -41,6 +41,6 @@ Features:
  - 🚧 Caching
  - 🚧 Dockerization
  - 🚧 Creating a frontend using Vue/React
- - 🚧 Getting ready for Production e.g. load balancing,NGINX,HTTPS 
+ - 🚧 Getting ready for Production e.g. load balancing,NGINX,HTTPS
  - 🚧 Deployment
  - 🚧 CI and CD

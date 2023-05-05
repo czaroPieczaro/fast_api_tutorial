@@ -1,4 +1,7 @@
-from pydantic import BaseModel, Field, validator, root_validator
+from pydantic import BaseModel
+from pydantic import Field
+from pydantic import root_validator
+from pydantic import validator
 
 
 class Blog(BaseModel):

@@ -1,9 +1,10 @@
 import time
 from datetime import datetime
-from typing import Optional, List
 from enum import Enum
+from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
+from pydantic import Field
 
 
 class Languages(str, Enum):
@@ -25,7 +26,14 @@ class Blog(BaseModel):
     comments: Optional[list[Comment]]
 
 
-print(Blog(title="1st blog", language="JAVA", is_active=True, comments=[{'text':"1st"}, {'text':'2nd'}]))
+print(
+    Blog(
+        title="1st blog",
+        language="JAVA",
+        is_active=True,
+        comments=[{"text": "1st"}, {"text": "2nd"}],
+    )
+)
 time.sleep(5)
 print(Blog(title="1st blog", language="JAVA", is_active=True))
 # print(Blog(title="1st blog", language="C++", is_active=True))

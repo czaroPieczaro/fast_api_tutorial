@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-
-from main import app, get_db_session
+from main import app
+from main import get_db_session
 
 testing_db = ["db for testing"]
 
@@ -14,9 +14,7 @@ client = TestClient(app)
 
 
 def test_item_should_add_to_database():
-    response = client.get(
-        "/add-item/?item=sugar"
-    )
+    response = client.get("/add-item/?item=sugar")
 
     assert response.status_code == 200
     assert response.text == '{"message":"added item sugar"}'
