@@ -34,7 +34,24 @@ def test_read_job(client):
 
 
 def test_failed_read_job(client):
-
     response = client.get("/jobs/1")
     assert response.status_code == 404
     assert response.json()["detail"] == "Job with id 1 does not exist."
+
+
+def test_list_jobs(client):
+    data = {
+        "title": "test_title",
+        "company": "test_company",
+        "company_url": "test_company_url",
+        "location": "test_location",
+        "description": "test_description",
+        "date_posted": "2022-03-20",
+    }
+    client.post("/jobs/create-job/", content=json.dumps(data))
+    client.post("/jobs/create-job/", content=json.dumps(data))
+
+    response = client.get("/jobs/all/")
+    assert response.status_code == 200
+    assert response.json()[0]
+    assert response.json()[1]

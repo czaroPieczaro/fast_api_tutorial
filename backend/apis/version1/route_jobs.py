@@ -1,5 +1,8 @@
+from typing import List
+
 from db.repository.jobs import create_new_job
-from db.repository.jobs import retreive_job
+from db.repository.jobs import list_jobs
+from db.repository.jobs import retrieve_job
 from db.session import get_db
 from fastapi import APIRouter
 from fastapi import Depends
@@ -21,10 +24,16 @@ def create_job(job: JobCreate, db: Session = Depends(get_db)):
 
 @router.get("/{id}", response_model=ShowJob)
 def read_job(id: int, db: Session = Depends(get_db)):
-    job = retreive_job(id=id, db=db)
+    job = retrieve_job(id=id, db=db)
     if not job:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Job with id {id} does not exist.",
         )
     return job
+
+
+@router.get("/all/", response_model=List[ShowJob])
+def read_jobs(db: Session = Depends(get_db)):
+    jobs = list_jobs(db)
+    return jobs
