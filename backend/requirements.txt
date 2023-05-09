@@ -8,9 +8,13 @@ python-dotenv
 pydantic[email]
 passlib[bcrypt]
 bcrypt
+python-jose
 
 #for testing
 pytest
 requests
 
 pre-commit
+
+#for accessing form data
+python-multipart
